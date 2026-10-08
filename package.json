@@ -1,0 +1,129 @@
+{
+  "name": "react-smart-table-grid",
+  "version": "0.1.0",
+  "description": "One Smart Data Grid. Any Data. Any UI. — an enterprise-grade, themeable, headless-compatible React data grid with one-stop UI customization.",
+  "keywords": [
+    "react",
+    "data-grid",
+    "datagrid",
+    "table",
+    "data-table",
+    "react-table",
+    "virtualized",
+    "sorting",
+    "filtering",
+    "pagination",
+    "typescript",
+    "nextjs",
+    "enterprise",
+    "theme"
+  ],
+  "license": "MIT",
+  "author": "Yogesh Gabani",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogeshgabani/react-smart-table-grid.git"
+  },
+  "homepage": "https://github.com/yogeshgabani/react-smart-table-grid#readme",
+  "bugs": {
+    "url": "https://github.com/yogeshgabani/react-smart-table-grid/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+    },
+    "./grid": {
+      "import": { "types": "./dist/grid.d.ts", "default": "./dist/grid.js" },
+      "require": { "types": "./dist/grid.d.cts", "default": "./dist/grid.cjs" }
+    },
+    "./theme": {
+      "import": { "types": "./dist/theme.d.ts", "default": "./dist/theme.js" },
+      "require": { "types": "./dist/theme.d.cts", "default": "./dist/theme.cjs" }
+    },
+    "./headless": {
+      "import": { "types": "./dist/headless.d.ts", "default": "./dist/headless.js" },
+      "require": { "types": "./dist/headless.d.cts", "default": "./dist/headless.cjs" }
+    },
+    "./export": {
+      "import": { "types": "./dist/export.d.ts", "default": "./dist/export.js" },
+      "require": { "types": "./dist/export.d.cts", "default": "./dist/export.cjs" }
+    },
+    "./adapters": {
+      "import": { "types": "./dist/adapters.d.ts", "default": "./dist/adapters.js" },
+      "require": { "types": "./dist/adapters.d.cts", "default": "./dist/adapters.cjs" }
+    },
+    "./cells": {
+      "import": { "types": "./dist/cells.d.ts", "default": "./dist/cells.js" },
+      "require": { "types": "./dist/cells.d.cts", "default": "./dist/cells.cjs" }
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "css": "node scripts/build-css.mjs",
+    "dev": "npm run css && vite",
+    "prebuild": "npm run css",
+    "pretypecheck": "npm run css",
+    "pretest": "npm run css",
+    "build": "tsup",
+    "build:playground": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^26.2.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "esbuild": "^0.28.2",
+    "jsdom": "^25.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.4.4",
+    "vitest": "^4.1.11"
+  },
+  "overrides": {
+    "tsup": {
+      "esbuild": "^0.28.2"
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
