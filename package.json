@@ -1,6 +1,6 @@
 {
   "name": "react-smart-table-grid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "One Smart Data Grid. Any Data. Any UI. — an enterprise-grade, themeable, headless-compatible React data grid with one-stop UI customization.",
   "keywords": [
     "react",
@@ -24,7 +24,7 @@
     "type": "git",
     "url": "git+https://github.com/yogeshgabani/react-smart-table-grid.git"
   },
-  "homepage": "https://github.com/yogeshgabani/react-smart-table-grid#readme",
+  "homepage": "https://react-smart-grid-table.netlify.app/",
   "bugs": {
     "url": "https://github.com/yogeshgabani/react-smart-table-grid/issues"
   },

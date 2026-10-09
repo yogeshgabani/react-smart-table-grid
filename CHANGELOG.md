@@ -6,6 +6,14 @@ and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.1] — 2026-10-09
+
+Documentation-only release — no code changes.
+
+### Added
+- Live playground at **<https://react-smart-grid-table.netlify.app/>**, linked from the README banner, badges and docs
+- `homepage` in `package.json` now points to the live playground
+
 ## [0.1.0] — 2026-10-08
 
 First public release, published to npm as **`react-smart-table-grid`**.
