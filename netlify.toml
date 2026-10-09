@@ -1,0 +1,9 @@
+# Netlify deploys the playground / live-view site, not the npm package.
+# `vite build` writes to playground-dist/ (see vite.config.ts), so that is
+# what gets published. Settings here override the Netlify UI.
+[build]
+  command = "npm run build:playground"
+  publish = "playground-dist"
+
+[build.environment]
+  NODE_VERSION = "22"
