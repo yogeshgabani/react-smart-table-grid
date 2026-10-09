@@ -1,5 +1,9 @@
 <div align="center">
 
+<a href="https://react-smart-grid-table.netlify.app/">
+  <img src="https://react-smart-grid-table.netlify.app/og-image.png" alt="Smart Data Grid by Yogesh Gabani — a React data grid with sorting, filtering, virtualization and themes" width="100%" />
+</a>
+
 # 🚀 Smart Data Grid
 
 **One Smart Data Grid. Any Data. Any UI.**
@@ -11,6 +15,9 @@ An enterprise-grade React data grid with a single-object design system, a headle
 [![types](https://img.shields.io/badge/types-included-3178c6?style=flat-square)](#api)
 [![license](https://img.shields.io/badge/license-MIT-emerald?style=flat-square)](./LICENSE)
 [![bundle](https://img.shields.io/badge/tree--shakable-✓-10b981?style=flat-square)](#ssr)
+[![live demo](https://img.shields.io/badge/live%20demo-netlify-00c7b7?style=flat-square&logo=netlify&logoColor=white)](https://react-smart-grid-table.netlify.app/)
+
+**[🌐 Live Demo & Playground →](https://react-smart-grid-table.netlify.app/)**
 
 `npm install react-smart-table-grid`
 
@@ -63,7 +70,9 @@ React 18 or 19 is the only peer dependency. Framework-by-framework setup (Vite, 
 
 ## See it running
 
-From the package source:
+**Live:** **<https://react-smart-grid-table.netlify.app/>** — no install needed.
+
+Or from the package source:
 
 ```bash
 npm install
@@ -393,6 +402,7 @@ See **[PROGRESS.md](PROGRESS.md)** for the full feature checklist, including wha
 
 ## Docs
 
+- **[Live playground](https://react-smart-grid-table.netlify.app/)** — every feature running in the browser
 - **[LIVE-VIEW.md](LIVE-VIEW.md)** — run the playground, install into other projects, framework setup
 - **[docs/](docs/)** — API reference, theming guide, Next.js guide, migration notes
 - **[CONTRIBUTING.md](CONTRIBUTING.md)**

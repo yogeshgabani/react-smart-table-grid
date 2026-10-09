@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://react-smart-grid-table.netlify.app/sitemap.xml

@@ -9,6 +9,8 @@ Two separate things live here:
 
 ## 1. Run the playground
 
+The deployed playground is live at **<https://react-smart-grid-table.netlify.app/>**. To run it locally:
+
 ```bash
 cd "react-smart-grid"
 npm install      # first time only

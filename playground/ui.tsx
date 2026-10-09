@@ -128,6 +128,7 @@ const ICONS = {
   chevronLeft: <path d="m15 18-6-6 6-6" />,
   chevronDown: <path d="m6 9 6 6 6-6" />,
   arrowRight: <path d="M5 12h14M13 5l7 7-7 7" />,
+  arrowUp: <path d="M12 19V5M5 12l7-7 7 7" />,
   zap: <path d="M13 2 3 14h9l-1 8 10-12h-9z" />,
   activity: <path d="M22 12h-4l-3 9L9 3l-3 9H2" />,
   terminal: (

@@ -221,7 +221,7 @@ function Shell(): React.JSX.Element {
   }, []);
 
   React.useEffect(() => {
-    document.title = `${page.label} · Smart Data Grid`;
+    document.title = `${page.label} · Smart Data Grid by Yogesh Gabani`;
   }, [page.label]);
 
   // Ctrl/⌘+K or "/" opens page search. A focused grid claims Ctrl+K for its own
@@ -379,6 +379,8 @@ function Shell(): React.JSX.Element {
         </main>
       </div>
 
+      <ScrollToTop focusTarget={mainRef} />
+
       {paletteOpen && <CommandPalette currentId={page.id} onClose={() => setPaletteOpen(false)} />}
     </div>
   );
@@ -441,6 +443,64 @@ function InstallButton(): React.JSX.Element {
       <span className="pg-sr-only" aria-live="polite">
         {copied ? 'Copied' : ''}
       </span>
+    </button>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+
+const SCROLL_TOP_THRESHOLD = 480;
+
+/** Floating "back to top" button. Its ring fills as the page scrolls. */
+function ScrollToTop({ focusTarget }: { focusTarget: React.RefObject<HTMLElement | null> }): React.JSX.Element {
+  const [visible, setVisible] = React.useState(false);
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
+
+  React.useEffect(() => {
+    let frame = 0;
+    const update = (): void => {
+      frame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      // Progress goes straight to a CSS variable so scrolling never re-renders.
+      buttonRef.current?.style.setProperty('--pg-totop-progress', progress.toFixed(4));
+      setVisible(window.scrollY > SCROLL_TOP_THRESHOLD);
+    };
+    const schedule = (): void => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+    };
+  }, []);
+
+  const scrollToTop = (): void => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    // The button hides once at the top; move focus to the page so keyboard users
+    // aren't dropped back onto <body>.
+    focusTarget.current?.focus({ preventScroll: true });
+  };
+
+  return (
+    <button
+      ref={buttonRef}
+      type="button"
+      className={cx('pg-totop', visible && 'pg-totop--visible')}
+      aria-label="Back to top"
+      title="Back to top"
+      onClick={scrollToTop}
+    >
+      <svg className="pg-totop-ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+        <circle className="pg-totop-track" cx="24" cy="24" r="22" />
+        <circle className="pg-totop-progress" cx="24" cy="24" r="22" />
+      </svg>
+      <Icon name="arrowUp" size={18} strokeWidth={2} />
     </button>
   );
 }
