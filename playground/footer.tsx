@@ -68,7 +68,10 @@ export function SiteFooter(): React.JSX.Element {
     npm.status === 'ok'
       ? {
           value: number(npm.total),
-          hint: `${number(npm.lastWeek)} last 7 days · npm counts through ${formatDate(npm.through)}`,
+          // No `through` date means npm hasn't counted this package yet.
+          hint: npm.through
+            ? `${number(npm.lastWeek)} last 7 days · npm counts through ${formatDate(npm.through)}`
+            : 'npm counts new packages a day or two after the first publish',
         }
       : npm.status === 'loading'
         ? { value: '…', hint: 'Asking npm…' }
